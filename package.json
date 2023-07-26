@@ -1,0 +1,37 @@
+{
+  "name": "fotoinfraccionesscrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.2",
+    "@types/uuid": "^9.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitest/coverage-v8": "^0.33.0",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.44.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Freihart512/fotoInfraccionesScrapper.git"
+  },
+  "author": "Carlos Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Freihart512/fotoInfraccionesScrapper/issues"
+  },
+  "homepage": "https://github.com/Freihart512/fotoInfraccionesScrapper#readme"
+}

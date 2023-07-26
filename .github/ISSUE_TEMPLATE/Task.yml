@@ -1,0 +1,31 @@
+name: Task
+description: Task
+title: "[Task]: "
+labels: ["Task"]
+body:
+- type: markdown
+  attributes:
+    value: "Objetivo de la tarea"
+- type: dropdown
+    id: Prioridad
+    attributes:
+      label: Prioridad
+      options:
+        - label: Alta
+        - label: Media
+        - label: Baja
+    validations:
+      required: false
+type: textarea
+  id: Criterios de Aceptacion
+  attributes:
+    label: Criterios de Aceptacion
+    description: "Como validar que la tarea es correcta"
+    value: |
+      1.
+      2.
+      3.
+      ...
+  validations:
+    required: true
+  
