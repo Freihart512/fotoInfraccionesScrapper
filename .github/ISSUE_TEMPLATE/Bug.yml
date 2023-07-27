@@ -18,7 +18,7 @@ body:
         required: false
   - type: markdown
     attributes:
-    value: "Como Reproducir el Bug"
+      value: "Como Reproducir el Bug"
   - type: textarea
     id: comportamiento_esperado
     attributes:
