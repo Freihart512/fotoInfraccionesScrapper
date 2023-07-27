@@ -3,32 +3,32 @@ description: Bug
 title: "[Bug]: "
 labels: ["Bug"]
 body:
-- type: markdown
-  attributes:
-    value: "detalles del bug"
-- type: dropdown
+  - type: markdown
+    attributes:
+      value: "detalles del bug"
+  - type: dropdown
     id: Prioridad
     attributes:
-      label: Prioridad
-      options:
-        - label: Alta
-        - label: Media
-        - label: Baja
+        label: Prioridad
+        options:
+          - label: Alta
+          - label: Media
+          - label: Baja
     validations:
-      required: false
-- type: markdown
-  attributes:
+        required: false
+  - type: markdown
+    attributes:
     value: "Como Reproducir el Bug"
-type: textarea
-  id: comportamiento_esperado
-  attributes:
-    label: Comportamiento Esperado
-    description: "como deberia funcionar"
-    value: |
-      1.
-      2.
-      3.
-      ...
-  validations:
-    required: true
+  - type: textarea
+    id: comportamiento_esperado
+    attributes:
+      label: Comportamiento Esperado
+      description: "como deberia funcionar"
+      value: |
+        1.
+        2.
+        3.
+        ...
+    validations:
+      required: true
   
