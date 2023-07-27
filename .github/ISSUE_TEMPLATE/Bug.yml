@@ -5,7 +5,7 @@ labels: ["Bug"]
 body:
   - type: markdown
     attributes:
-      value: "detalles del bug"
+    value: "detalles del bug"
   - type: dropdown
     id: Prioridad
     attributes:
