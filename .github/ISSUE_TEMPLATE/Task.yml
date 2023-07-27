@@ -15,9 +15,9 @@ body:
     attributes:
       label: Prioridad
       options:
-        - label: Alta
-        - label: Media
-        - label: Baja
+        - Alta
+        - Media
+        - Baja
     validations:
       required: false
   - type: textarea
