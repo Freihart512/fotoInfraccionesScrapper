@@ -17,7 +17,7 @@ body:
     validations:
       required: false
   - type: textarea
-    id: Criterios de Aceptacion
+    id: criterios_aceptacion
     attributes:
       label: Criterios de Aceptacion
       description: "Como validar que la tarea es correcta"
@@ -27,7 +27,6 @@ body:
         3.
         ...
     validations:
-    required: true
   - type: markdown
     attributes:
       value: "DEMO"
