@@ -28,6 +28,6 @@ body:
         ...
     validations:
     required: true
-      - type: markdown
+  - type: markdown
     attributes:
       value: "DEMO"
