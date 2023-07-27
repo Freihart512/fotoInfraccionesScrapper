@@ -5,7 +5,7 @@ labels: ["Task"]
 body:
   - type: markdown
     attributes:
-    value: "Objetivo de la tarea"
+      value: "Objetivo de la tarea"
   - type: dropdown
     id: Prioridad
     attributes:
@@ -28,3 +28,6 @@ body:
         ...
     validations:
     required: true
+      - type: markdown
+    attributes:
+      value: "DEMO"
