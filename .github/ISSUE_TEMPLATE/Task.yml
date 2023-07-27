@@ -2,6 +2,7 @@ name: Task
 description: Task
 title: "[Task]: "
 labels: ["Task"]
+projects: "github/1"
 body:
   - type: textarea
     id: descripcion
