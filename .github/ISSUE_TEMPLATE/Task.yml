@@ -26,7 +26,3 @@ body:
         2.
         3.
         ...
-    validations:
-  - type: markdown
-    attributes:
-      value: "DEMO"
