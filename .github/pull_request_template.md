@@ -1,4 +1,4 @@
-[Issue Title](https://github.com/Freihart512/fotoInfraccionesScrapper/issues/NUMERO ISSUE)  resolve #Issue Number
+This PR resolves #Issue Number
 ## Descripcion
 
 ## Como

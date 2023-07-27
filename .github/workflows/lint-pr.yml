@@ -8,6 +8,11 @@ jobs:
     name: Super Lint
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
