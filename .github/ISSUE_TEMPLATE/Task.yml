@@ -3,9 +3,12 @@ description: Task
 title: "[Task]: "
 labels: ["Task"]
 body:
-  - type: markdown
+  - type: textarea
+    id: descripcion
     attributes:
-      value: "Objetivo de la tarea"
+      label: Descripcion
+      description: "Descripcion de la tarea"
+      value: Descripcion de la tarea 
   - type: dropdown
     id: Prioridad
     attributes:
