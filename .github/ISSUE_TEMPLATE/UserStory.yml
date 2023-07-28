@@ -1,14 +1,22 @@
-name: Task
-description: Task
-title: "[Task]: "
-labels: ["Task"]
+name: User Story
+description: User Story
+title: "[User Story]: "
+labels: ["User Story"]
 body:
   - type: textarea
-    id: descripcion
+    id: UserStory
     attributes:
-      label: Descripcion
-      description: "Descripcion de la tarea"
-      value: Descripcion de la tarea 
+      label: User Story Descripcion
+      description: "Descripcion"
+      value: |
+        ## Descripcion
+
+
+        ```[tasklist]
+        ### Tareas
+        - [ ] Tarea 1
+        - [ ] Tarea 2
+        ``` 
   - type: dropdown
     id: Prioridad
     attributes:
