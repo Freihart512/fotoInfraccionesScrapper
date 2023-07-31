@@ -30,8 +30,8 @@
   },
   "scripts": {
     "compile": "rimraf ./dist && tsc",
-    "start": "npm run compile && node ./dist/index.js",
-    "dev": "concurrently \"npm run compine --watch\" \"nodemon -q dist/index.js\"",
+    "start": "npm run compile && node --experimental-specifier-resolution=node ./dist/index.js",
+    "dev": "concurrently \"npm run compile --watch\" \"nodemon -q dist/index.js\"",
     "lint": "npx eslint ./src",
     "lint:fix": "npx eslint ./src --fix"
   },
