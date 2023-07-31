@@ -21,9 +21,11 @@ jobs:
         uses: super-linter/super-linter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINTER_RULES_PATH: /
           JAVASCRIPT_DEFAULT_STYLE: prettier
           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.cjs
+          VALIDATE_JAVASCRIPT_ES: true
           TYPESCRIPT_DEFAULT_STYLE: prettier
           TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.cjs
           TYPESCRIPT_STANDARD_TSCONFIG_FILE: tsconfig.json
-          LINTER_RULES_PATH: ./
+          
