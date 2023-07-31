@@ -2,7 +2,7 @@ name: Lint Code Base
 
 on:
  pull_request:
-    type: [synchronize]
+    types: [synchronize]
 jobs:
   build:
     name: Super Lint
