@@ -9,7 +9,7 @@ import bodyParser from 'body-parser';
 import schema from './schema';
 
 
-export async function InitializeApi(serverPort:Number) {
+export async function InitializeApi(serverPort:number) {
 
   const app: Express = express();
   const httpServer = http.createServer(app);
