@@ -1,4 +1,3 @@
-
 const typeDefs = `#graphql
 type Query {
     getVersion: String!
@@ -10,7 +9,6 @@ const resolvers = {
     getVersion: () => `v1`,
   },
 };
-
 
 export default {
     typeDefs,
