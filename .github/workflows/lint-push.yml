@@ -1,6 +1,7 @@
 name: Lint Code Base
 
-on: push
+on:
+  push
 jobs:
   build:
     name: Super Lint
@@ -25,4 +26,4 @@ jobs:
           TYPESCRIPT_DEFAULT_STYLE: prettier
           TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.cjs
           TYPESCRIPT_STANDARD_TSCONFIG_FILE: tsconfig.json
-          LINTER_RULES_PATH: ../../
+          LINTER_RULES_PATH: ./

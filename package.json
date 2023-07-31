@@ -32,8 +32,9 @@
     "compile": "rimraf ./dist && tsc",
     "start": "npm run compile && node ./dist/index.js",
     "dev": "concurrently \"npm run compile --watch\" \"nodemon -q dist/index.js\"",
-    "lint": "npx eslint .",
-    "lint:fix": "npm run lint --fix"
+    "lint": "npx prettier .  && npx eslint .",
+    "lint:fix": "npx eslint . --fix",
+    "prettier:fix": "npx prettier --write ."
   },
   "repository": {
     "type": "git",
