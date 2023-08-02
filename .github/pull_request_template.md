@@ -1,5 +1,4 @@
-# This PR resolves #Issue Number
-
+# Related Issue #Issue Number
 ## Descripcion
 
 ## Como

@@ -16,5 +16,5 @@ jobs:
           # to the issue
           project-url: https://github.com/users/Freihart512/projects/1
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          labeled: bug, user
+          labeled: Bug, Task, Feature, User Story 
           label-operator: OR
