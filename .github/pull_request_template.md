@@ -1,4 +1,4 @@
-Related Issue #Issue Number
+# Related Issue #Issue Number
 ## Descripcion
 
 ## Como
