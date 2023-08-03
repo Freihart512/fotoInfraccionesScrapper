@@ -1,0 +1,13 @@
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  move-linked-issues:
+    runs-on: ubuntu-latest
+    name: Move linked issues to code review
+    steps:
+      - uses: rharter/github-move-linked-project-cards@v0.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          column: In code Review
