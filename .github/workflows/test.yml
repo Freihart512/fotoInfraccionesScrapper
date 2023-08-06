@@ -7,13 +7,13 @@ jobs:
   getCardInfo:
     runs-on: ubuntu-latest
     steps:
-      - run: "echo 'latest release: ${{ github.event.issue }}'"
+      - run: "echo 'latest release: ${{ github.event.node_id }}'"
       - uses: octokit/graphql-action@v2.x
         id: get_card_info
         with:
           query: |
             query {
-              node(id: ${{ github.event.issue.id }}) {
+              node(id: ${{ github.event.issue.node_id }}) {
                 ... on Issue {
                     __typename 
                     id
