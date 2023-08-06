@@ -1,0 +1,45 @@
+name: Tests
+on:
+  issues:
+    types: [assigned]
+
+jobs:
+  getCardInfo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: octokit/graphql-action@v2.x
+        id: get_card_info
+        with:
+          query: |
+            query {
+              node(id: ${{ github.event.issue.id }}) {
+                ... on Issue {
+                    __typename 
+                    id
+                    number
+                    title
+                    labels (first:100){
+                      edges{
+                        __typename
+                        node{
+                          name
+                        }
+                      }
+                    }
+                    projectItems(first: 10){
+                      nodes{
+                        fieldValueByName(name:"Status"){
+                          __typename
+                          ... on ProjectV2ItemFieldSingleSelectValue{
+                            name
+                            id
+                          }
+                        }
+                      }
+                    }
+                  }
+              }
+            }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "echo 'latest release: ${{ steps.get_card_info.outputs.data }}'"
