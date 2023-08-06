@@ -13,7 +13,7 @@ jobs:
         with:
           query: |
             query {
-              node(id: ${{ github.event.issue.node_id }}) {
+              node(id: "${{ github.event.issue.node_id }}") {
                 ... on Issue {
                     __typename 
                     id
