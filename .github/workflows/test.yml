@@ -7,6 +7,7 @@ jobs:
   getCardInfo:
     runs-on: ubuntu-latest
     steps:
+      - run: "echo 'latest release: ${{ github.event.issue }}'"
       - uses: octokit/graphql-action@v2.x
         id: get_card_info
         with:
