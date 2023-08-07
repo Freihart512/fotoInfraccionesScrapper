@@ -12,35 +12,39 @@ jobs:
         id: get_card_info
         with:
           query: |
-            query {
-              node(id: "${{ github.event.issue.node_id }}") {
-                ... on Issue {
-                    __typename 
+            query { node(id: "${{ github.event.issue.node_id }}") {
+            ... on Issue {
+             __typename
+            id
+            number
+            title
+            labels(first: 100) {
+              edges {
+                __typename
+                node {
+                  name
+                }
+              }
+            }
+            projectItems(first: 1) {
+              nodes {
+                project {
+                  title
+                  id
+                }
+                id
+                __typename
+                fieldValueByName(name: "Status") {
+                  __typename
+                  ... on ProjectV2ItemFieldSingleSelectValue {
+                    name
                     id
-                    number
-                    title
-                    labels (first:100){
-                      edges{
-                        __typename
-                        node{
-                          name
-                        }
-                      }
-                    }
-                    projectItems(first: 10){
-                      nodes{
-                        fieldValueByName(name:"Status"){
-                          __typename
-                          ... on ProjectV2ItemFieldSingleSelectValue{
-                            name
-                            id
-                          }
-                        }
-                      }
-                    }
                   }
+                }
               }
             }
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
       - run: "echo 'latest release: ${{ steps.get_card_info.outputs.data }}'"
+      - run: "echo 'PROJECT_ID='$(jq '.data.projectItems.nodes[0].project.id' steps.get_card_info.outputs.data) >> $GITHUB_ENV
+      - run: "echo Output [$PROJECT_ID]" 
