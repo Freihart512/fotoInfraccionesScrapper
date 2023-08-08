@@ -8,45 +8,45 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: "echo 'latest release: ${{ github.event.node_id }}'"
-      - uses: octokit/graphql-action@v2.x
         id: get_card_info
-        with:
-          query: |
+      - run: |
+          gh api graphql -f query='
             query { 
-              node(id: "${{ github.event.issue.node_id }}") {
-                        ... on Issue {
-                         __typename
+                node(id: "${{ github.event.issue.node_id }}") {
+                ... on Issue {
+                 __typename
+                id
+                number
+                title
+                labels(first: 100) {
+                  edges {
+                    __typename
+                    node {
+                      name
+                    }
+                  }
+                }
+                projectItems(first: 1) {
+                  nodes {
+                    project {
+                      title
+                      id
+                    }
+                    id
+                    __typename
+                    fieldValueByName(name: "Status") {
+                      __typename
+                      ... on ProjectV2ItemFieldSingleSelectValue {
+                        name
                         id
-                        number
-                        title
-                        labels(first: 100) {
-                          edges {
-                            __typename
-                            node {
-                              name
-                            }
-                          }
-                        }
-                        projectItems(first: 1) {
-                          nodes {
-                            project {
-                              title
-                              id
-                            }
-                            id
-                            __typename
-                            fieldValueByName(name: "Status") {
-                              __typename
-                              ... on ProjectV2ItemFieldSingleSelectValue {
-                                name
-                                id
-                              }
-                            }
-                          }
-                        }
                       }
+                    }
+                  }
+                }
               }
             }
+          }' > project_data.json
+          
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
       - run: "echo 'latest release: ${{ steps.get_card_info.outputs.data }}'"
