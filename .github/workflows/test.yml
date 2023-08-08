@@ -49,6 +49,5 @@ jobs:
           
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-      - run: "echo 'latest release: ${{ steps.get_card_info.outputs.data }}'"
-      - run: "echo 'PROJECT_ID='$(jq '.data.projectItems.nodes[0].project.id' steps.get_card_info.outputs.data) >> $GITHUB_ENV"
+      - run: "echo 'PROJECT_ID='$(jq '.data.projectItems.nodes[0].project.id' project_data.json) >> $GITHUB_ENV"
       - run: "echo Output [$PROJECT_ID]" 
