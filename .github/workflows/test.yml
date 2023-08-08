@@ -49,5 +49,9 @@ jobs:
           
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-      - run: "echo 'PROJECT_ID='$(jq '.data.node.projectItems.nodes[0].project.title' project_data.json) >> $GITHUB_ENV"
-      - run: "echo Output [$PROJECT_ID]" 
+      - run: "echo 'PROJECT_ID='$(jq '.data.node.projectItems.nodes[0].project.id' project_data.json) >> $GITHUB_ENV"
+      - run: "echo 'ITEM_ID='$(jq '.data.node.projectItems.nodes[0].id' project_data.json) >> $GITHUB_ENV"
+      - run: "echo 'FIELD_ID='$(jq '.data.node.projectItems.nodes[0].fieldValueByName.id' project_data.json) >> $GITHUB_ENV"
+      - run: "echo PROJECT_ID: [$PROJECT_ID]" 
+      - run: "echo ITEM_ID: [$ITEM_ID]" 
+      - run: "echo FIELD_ID: [$FIELD_ID]" 
