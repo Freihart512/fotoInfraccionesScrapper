@@ -5,8 +5,8 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
-      - uses: Freihart512/move-linked-pr-issue@v0.0.6
+      - uses: Freihart512/move-linked-pr-issue@v0.0.7
         with: 
           project_name: Scrapper Infracciones
           user_name: Freihart512
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
