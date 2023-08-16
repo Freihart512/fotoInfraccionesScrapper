@@ -9,4 +9,4 @@ jobs:
         with: 
           project_name: Scrapper Infracciones
           user_name: Freihart512
-          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          github_token: ${{ secrets.for_actions }}
