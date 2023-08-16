@@ -5,7 +5,7 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
-      - uses: Freihart512/move-linked-pr-issue@v0.0.7
+      - uses: Freihart512/move-linked-pr-issue@v0.0.8
         with: 
           project_name: Scrapper Infracciones
           user_name: Freihart512
