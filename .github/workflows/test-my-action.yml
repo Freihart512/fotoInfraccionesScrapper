@@ -1,6 +1,7 @@
 name: Tests my action
 on:
-  push
+  issues:
+        types: [assigned]
 jobs:
   testing:
     runs-on: ubuntu-latest
