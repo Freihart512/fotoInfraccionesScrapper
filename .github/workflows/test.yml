@@ -1,57 +1,17 @@
-name: Tests
+name: Tests my action
 on:
   issues:
-    types: [assigned]
-
+        types: [assigned]
 jobs:
-  getCardInfo:
+  testing:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
     steps:
-      - run: "echo 'latest release: ${{ github.event.node_id }}'"
-        id: get_card_info
-      - run: |
-          gh api graphql -f query='
-            query { 
-                node(id: "${{ github.event.issue.node_id }}") {
-                ... on Issue {
-                 __typename
-                id
-                number
-                title
-                labels(first: 100) {
-                  edges {
-                    __typename
-                    node {
-                      name
-                    }
-                  }
-                }
-                projectItems(first: 1) {
-                  nodes {
-                    project {
-                      title
-                      id
-                    }
-                    id
-                    __typename
-                    fieldValueByName(name: "Status") {
-                      __typename
-                      ... on ProjectV2ItemFieldSingleSelectValue {
-                        name
-                        id
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }' > project_data.json
-          
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-      - run: "echo 'PROJECT_ID='$(jq '.data.node.projectItems.nodes[0].project.id' project_data.json) >> $GITHUB_ENV"
-      - run: "echo 'ITEM_ID='$(jq '.data.node.projectItems.nodes[0].id' project_data.json) >> $GITHUB_ENV"
-      - run: "echo 'FIELD_ID='$(jq '.data.node.projectItems.nodes[0].fieldValueByName.id' project_data.json) >> $GITHUB_ENV"
-      - run: "echo PROJECT_ID: [$PROJECT_ID]" 
-      - run: "echo ITEM_ID: [$ITEM_ID]" 
-      - run: "echo FIELD_ID: [$FIELD_ID]" 
+      - uses: Freihart512/move-linked-pr-issue@v0.0.27
+        with: 
+          project_name: Scrapper Infracciones
+          user_name: Freihart512
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{secrets.PERSONAL_TOKEN}}
