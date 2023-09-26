@@ -15,3 +15,4 @@ jobs:
           user_name: Freihart512
           github_token: ${{ secrets.GITHUB_TOKEN }}
           personal_token: ${{secrets.PERSONAL_TOKEN}}
+          target_col: In Progress
